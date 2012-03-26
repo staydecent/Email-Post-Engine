@@ -1,0 +1,86 @@
+/* Reset */
+h1,h2,h3,h4,h5,h6,address,blockquote,div,p,pre,code,body,dl,dt,dd,ol,ul,li,fieldset,form,input,legend,textarea { margin:0; padding:0; }
+object { outline:none; }
+
+/* Structure Module */
+html,body { width:100%; height:100%; margin:0 0 1px 0; background:#fffff7; }
+body { font: 62.5% 'Bookman Old Style', 'URW Bookman L', 'itc bookman', serif; color:#000; }
+
+/* Text Module */
+abbr,acronym { border-bottom:1px dotted #333; }
+address,cite,dfn,em,var { font-style:italic; }
+code,kbd,samp,pre { font:400 1em 'consolas','andale mono','lucida console',monospace; }
+pre { padding:0.5em; background:#0a0a0a; color:#fff; margin-bottom:1em; overflow-x:scroll; }
+.gist-highlight pre { color:#000; font-style:normal; }
+pre code { background:transparent; }
+blockquote { padding:1%; font:400 2.0em 'Bookman Old Style','URW Bookman L','itc bookman',serif; font-style:italic; }
+small { font-size:0.9em; font-family:'Helvetica Neue',helvetica,arial,sans-serif; color:#555; }
+p { font-size:1.0em; margin:0 0 2em 0; line-height:1.6em; }
+p.big { font:400 1.4em 'Helvetica Neue',helvetica,arial,sans-serif; line-height:1.6em; }
+p.indent { text-indent:1%; }
+h1 { font:400 1em 'Bookman Old Style', 'URW Bookman L', 'itc bookman', times, serif; }
+h2 { font-size:1em; font-weight:400; }
+h3 { font:800 1em 'Helvetica Neue',helvetica,arial,sans-serif; letter-spacing:0.1em; }
+h4 { font-family:'Bookman Old Style','URW Bookman L','itc bookman',serif; font-weight:400; font-style:italic; }
+
+/* Hypertext Module */
+a { color:#000; text-decoration:underline; }
+a:hover   { text-decoration:none; }
+a:active  { color:#aaa; }
+a:visited { color:#000; }
+a.active  { font-style:italic; }
+
+/* List Module */
+ol,ul     { margin:0 0 2em 0; }
+ol li     { list-style:decimal outside none; }
+ul li     { list-style:disc outside none; }
+li.underline { border-bottom:1px solid #eee; }
+div#meta ul li { list-style:none outside none; padding:0.5em 0; }
+
+/* Image Module */
+img { border:0; vertical-align:top; }
+a img { margin:0 0 0.50em; border:0; }
+
+/* Form Module */
+input#search { border:0;background:#fffff7; font: 1em 'Bookman Old Style', 'URW Bookman L', 'itc bookman', serif; color:#000; text-decoration:underline; }
+form { margin:0;padding:0; }
+input, textarea, select { background:#fffff7; }
+
+/* Layout Module */
+div#wrapper { font-size:1.6em; line-height:1.8em; overflow:hidden; }
+div.container { margin:50px auto; width:50%; }
+#header { position:relative; }
+#logo { position:absolute; bottom:0; left:-300px; }
+h1#logoTitle { font:400 1.0em 'Bookman Old Style', 'URW Bookman L', 'itc bookman', serif; color:#0a0a0a; }
+a#logoLink { color:#000; }
+h2#first { font:800 8em 'Helvetica Neue',helvetica,arial,sans-serif; line-height:0.78em; margin:0; text-shadow:0 0 1px #fefefe; letter-spacing:-0.035em; }
+h2#first a { color:#000; text-decoration:none; }
+h2#first a:hover { color:#222; }
+#content { position:relative; margin-top:100px; padding-bottom:50px; }
+#meta { position:absolute; top:0; left:-300px; font:400 0.8em 'Helvetica Neue',helvetica,arial,sans-serif; letter-spacing:0.035em; color:#333; }
+#meta ul { border-top:1px solid #eee; }
+.post { height:150px; }
+
+/* Grid Module */
+.col      { float:left; margin:0 2% 0 0; }
+.colr     { float:right; margin:0 0 0 1%; }
+.size1of5 { width:18%; }
+.size2of5 { width:38%; }
+.size3of5 { width:58%; }
+.size4of5 { width:78%; }
+.size1of3 { width:32%; }
+.size1of2 { width:50%; }
+.size1of1 { width:100%; }
+.last.col { margin:0; }
+
+/* Common */
+.right  { float:right; }
+.left   { float:left; }
+.block  { display:block; height:100%; width:100%; }
+.replace { text-indent:-9999px !important; overflow:hidden; }
+.clearfix:after {content:" ";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display:inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+/* End hide from IE-mac \*/

@@ -1,0 +1,4 @@
+This website is the combined portfolio & blog of freelance Web Designer Adrian Unger.
+It was built in a day, thanks to the Laravel PHP Framework (http://laravel.com/).
+
+If you'd like to hire me, see staydecent.ca/hire.

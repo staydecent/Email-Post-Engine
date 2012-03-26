@@ -1,0 +1,295 @@
+/*
+    style-0.1.6.css
+    by Adrian Unger <hello@staydecent.ca>
+
+    organization based on:
+     http://developers.whatwg.org/content-models.html
+
+    01 - Reset
+    02 - Structure
+    03 - Headings
+    04 - Text
+    05 - Lists
+    06 - Forms
+    07 - Embeds
+    08 - Grid
+    09 - Mobile
+    10 - Print
+*/
+
+/* 
+    01 - Reset 
+*/
+h1,h2,h3,h4,h5,h6,address,blockquote,div,p,pre,code,body,dl,dt,dd,ol,ul,li,fieldset,form,input,legend,textarea { 
+    margin:0; 
+    padding:0; 
+}
+object { 
+    outline:none; 
+}
+header, article {
+    display:block;
+}
+
+/* 
+    02 - Structure
+*/
+html {
+    position:relative;
+    overflow-y:scroll; /* Force scrollbar */
+}
+body {
+    font:14px/1.5 'Open Sans', sans-serif;
+    color:#1a1a1a;
+    background:#f5f5f5;
+}
+.inner {
+    width:100%;
+    max-width:1140px;
+    min-width:960px;
+    margin:0 auto;
+    padding-top:21px;
+    border-top:1px solid #f5f5f5;
+    position:relative;
+    overflow:hidden;
+    background:#fff;
+}
+.spacing {
+    padding-bottom:21px;
+}
+.border {
+    padding-top:20px;
+    border-top:1px solid #eee;
+}
+#menu {
+    background:#333;
+    position:fixed;
+    margin-top:21px;
+    padding:21px;
+    width:126px;
+}
+.post {
+    font-size:16px;
+}
+#latest_articles > ol {
+    margin-top:-26px;
+}
+footer {
+    padding-bottom:42px;
+}
+
+/* 
+    03 - Headings
+*/
+h1 {
+    clear:both;
+    overflow:hidden;
+    margin-right:21px;
+    padding:126px 0 21px 21px;
+}
+h2 {
+    font:800 16px/1.2 'Open Sans', sans-serif;
+    margin-bottom:21px;
+    color:#2d2d2d;
+}
+h2.post-title {
+    font:800 21px/1.2 'Open Sans', sans-serif;
+}
+h3 {
+    font:800 16px/1.2 'Open Sans', sans-serif;
+    margin-bottom:21px;
+}
+h4 {
+    font:400 16px/1.3 Helvetica, sans-serif;
+    font-style:italic;
+    margin-bottom:21px;
+}
+
+/* 
+    04 - Text
+*/
+a {
+    color:#4482c9;
+}
+a:visited {
+    color:#879fbb;
+}
+a:hover {
+    text-decoration:none;
+}
+.nav-link, .nav-link:visited {
+    color:#ccc;
+    text-decoration:none;
+    display:block;
+    padding-left:4px;
+}
+.nav-link:hover {
+    color:#fff;
+    text-decoration:none;
+}
+.current {
+    color:#fff !important;
+}
+.grey, .meta {
+    color:#a8a8a8 !important;
+    text-decoration:none;
+}
+.grey:hover {
+    color:#2d2d2d;
+}
+.rev {
+    color:#2d2d2d !important;
+    text-decoration:none;
+}
+.rev:hover {
+    text-decoration:underline;
+}
+.rev:visited {
+    color:#3a3a3a !important;
+}
+address,cite,dfn,em,var { 
+    font-style:italic;
+    color:#444;
+}
+strong,b {
+    font-weight:600;
+}
+pre {
+    padding:11px 9px;
+    background:#f5f5f5;
+    margin-bottom:21px;
+    border-left:2px solid #EEE;
+}
+code {
+    background:#f5f5f5;
+}
+p {
+    text-indent:0;
+}
+.text > p {
+    margin-bottom:21px;
+    line-height:1.8;
+}
+p.big {
+    font:400 27px/1.5 Georgia, serif;
+    font-style:italic;
+    color:#a8a8a8;
+}
+
+
+/* 
+    05 - Lists 
+*/
+ol,ul { 
+    padding:0; 
+}
+ol > li { 
+    list-style:decimal outside none; 
+}
+ul > li { 
+    list-style:none outside none; 
+}
+li.post {
+    padding-bottom:10px;
+    border-bottom:1px solid #eee;
+}
+li.post > .meta { 
+    text-align:right;
+}
+
+/* 
+    06 - Forms
+*/
+
+/* 
+    07 - Embeds
+*/
+img { 
+    border:0; 
+    vertical-align:top;
+    max-width:100%;
+}
+.photo {
+    opacity:0.7;
+    -webkit-transition:opacity 0.5s ease;
+    -moz-transition:opacity 0.5s ease;
+    -o-transition:opacity 0.5s ease;
+    transition:opacity 0.5s ease;
+}
+.photo:hover {
+    opacity:1;
+}
+.gist {
+    font-size:12px;
+}
+
+/* 
+    08 - Grid
+*/
+.col1,.col2,.col3,.col4,.col5 { 
+    display:block; float:left; margin-left:2%; margin-right:2%; overflow:hidden;}
+.last { margin-right:0; }
+.col1 { width:16%; }
+.col2 { width:36%; }
+.col3 { width:56%; }
+.col4 { width:76%; }
+.col5 { width:96%; }
+
+.skip1 { padding-left:20%; }
+.skip2 { padding-left:40%; }
+
+.move { position:absolute; left:-9999px; }
+.inline-block { display:inline-block; }
+.inline { display:inline; }
+.right { float:right !important;}
+.hide {display:none;}
+
+/*
+    09 - Mobile
+*/
+@media only screen and (min-width:768px) and (max-width:1269px) {
+    #menu {z-index:2; width:auto; }
+    #navlist > li { display:inline-block; padding-right:11px; }
+}
+@media only screen and (min-width:768px) and (max-width:959px) {
+    #intro { font-size:12px; }
+    #main, h3 { font-size:13px; }
+    .inner {
+        max-width:768px;
+        min-width:768px;
+        width:768px;
+    }
+    #menu { padding:11px; }
+}
+@media only screen and (min-width:0px) and (max-width:767px) {
+    body { font-size:14px; background:#fff; }
+    h2,h3 { font-size:14px; }
+    h2 { text-align:center; }
+    .inner {
+        max-width:420px;
+        min-width:300px;
+        width:100%;
+    }
+    #menu { z-index:2; width:auto; margin:0 auto; position:relative; margin-top:0; padding:11px; }
+    #navlist > li { display:inline-block; padding-right:11px; }
+    #intro > .col1 { display:none; }
+    h1 { padding-top:11px; }
+    .col1,.col2,.col3,.col4,.col5 { float:none; width:auto; margin-bottom:11px; }
+    .skip1,.skip2 { padding-left:0; }
+    li.post > .meta { 
+        text-align:left;
+    }
+}
+
+/*
+    10 - Print Styles (www.phpied.com/delay-loading-your-print-css/)
+*/
+@media print {
+    * { background:transparent !important; color:#1a1a1a !important; text-shadow:none; }
+    a, a:visited { color:#1a1a1a !important; text-decoration:underline; }
+    a:after { content:" (" attr(href) ")"; }
+    abbr:after { content:" (" attr(title) ")"; }&nbsp;&nbsp;&nbsp;&nbsp;.ir a:after { content:""; } &nbsp;/* Don't show links for images */&nbsp;&nbsp;&nbsp;&nbsp;pre, blockquote { border:1px solid #999; page-break-inside:avoid; }&nbsp;&nbsp;&nbsp;&nbsp;img { page-break-inside:avoid; }
+    @page { margin:0.5cm; }
+    p, h2, h3 { orphans:3; widows:3; }
+    h2, h3{ page-break-after:avoid; }
+}

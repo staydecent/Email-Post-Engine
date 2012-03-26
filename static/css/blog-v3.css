@@ -1,0 +1,228 @@
+/*
+    blog-v3.css
+    reset and define html elements
+    organization based on http://www.w3.org/TR/xhtml11/doctype.html#s_doctype
+
+    01 - Reset
+    02 - Structure
+    03 - Text
+    04 - Hypertext
+    05 - List
+    06 - Form
+    07 - Image
+    08 - Reusable/Common Classes
+*/
+
+/* 
+    01 - Reset 
+*/
+h1,h2,h3,h4,h5,h6,address,blockquote,div,p,pre,code,body,dl,dt,dd,ol,ul,li,fieldset,form,input,legend,textarea { 
+    margin:0; 
+    padding:0; 
+}
+object { 
+    outline:none; 
+}
+@font-face {
+    font-family:'Komika';
+    src:url('../font/KomikaTitle-Axis.ttf');
+}
+
+/* 
+    02 - Structure Module
+*/
+html,body {
+    position:relative;
+    width:960px;
+    margin:1em auto; 
+    background:#fefefe; 
+}
+body { 
+    font:62.5% 'Consolas','Andale Mono',monospace; /* 10px, assuming browser default is 16px */
+    color:#1a1a1a; 
+}
+article > section#content {
+    float:right;
+    width:640px;
+    font-size:1.4em;
+    line-height:1.6em;
+}
+article > aside {
+    float:left;
+    width:320px;
+    margin-top:0.5em;
+    font-size:1.2em;
+    line-height:1.4em;
+}
+article > section#excerpt {
+    display:none;
+    position:absolute;
+    width:320px;
+    top:20%;
+    left:640px;
+    z-index:3;
+    font-size:1.4em;
+    line-height:1.6em;
+}
+div#slider {
+    display:none;
+    position:absolute;
+    width:620px;
+    height:300px;
+    top:12%;
+    right:0px;
+    background:transparent url(../img/slider.png) no-repeat top left;
+    z-index:2;
+}
+footer {
+    clear:both;
+    width:960px;
+    padding-top:8em;
+}
+
+/* 
+    03 - Text Module (Consolidated with Presentation & Edit Modules)
+*/
+header > h1 {
+    display:none;
+}
+h2 {
+    font:400 2em 'Bookman Old Style','URW Bookman L','itc bookman',serif;
+    font-style:italic;
+}
+article > header > h2 {
+    font:800 8em 'Komika','Bookman Old Style','URW Bookman L','itc bookman',serif;
+    line-height:1.2em;
+    text-align:center;
+    text-shadow:0 0 1px #fff;
+    width:640px;
+    margin:1em 0 1.5em;
+}
+section#latest_articles ol li h2 {
+    font:800 2em 'Komika','Bookman Old Style','URW Bookman L','itc bookman',serif;
+    line-height:1em;
+    text-align:center;
+    text-shadow:0 0 1px #fff;
+    width:300px;
+    display:none;
+}
+h3 {
+    font-weight:800;
+}
+address,cite,dfn,em,var { 
+    font-style:italic; 
+}
+blockquote { 
+    padding:0 0 2em 0; 
+    font-size:0.9em; 
+    line-height:1.4em; 
+    color:#555; 
+}
+small {
+    font:400 0.85em Helvetica,Arial,sans-serif;
+}
+p,pre {
+    text-indent:0;
+    padding:0 0 2em 0; 
+}
+p.indent { 
+    text-indent:1%; 
+}
+p.big {
+    font-size:1.5em;
+    line-height:1.5em;
+    font-style:italic;
+}
+
+/* 
+    04 - Hypertext Module 
+*/
+a { 
+    color:#0a0a0a; 
+    text-decoration:none;
+}
+a:visited { 
+    color:#333; 
+}
+a:hover { 
+    color:#fed73c;
+}
+article > section#content a {
+    border-bottom:1px solid #ccc;
+}
+h2 a, a h2 {
+    color:#333 !important;
+}
+
+/* 
+    05 - List Module 
+*/
+ol,ul { 
+    padding:0 0 2em 0; 
+}
+ol li { 
+    list-style:decimal outside none; 
+}
+ul li { 
+    list-style:disc outside none; 
+}
+nav > ul > li, footer > ul > li {
+    list-style:none outside none;
+    float:left;
+    width:320px;
+    font-size:1.4em;
+    line-height:1.6em;
+}
+section#latest_articles > ol > li {
+    list-style:none outside none;
+    float:left;
+    overflow:hidden;
+    width:300px;
+    height:140px;
+    margin-right:20px;
+    font-size:1.4em;
+    line-height:1.6em;
+}
+section#latest_articles > ol > li.last {
+    margin:0;
+}
+aside > section > ul > li {
+    list-style:none outside none;
+}
+
+/* 
+    06 - Form Module 
+*/
+form {
+    
+}
+input {
+    border:1px solid #eee;
+    font:400 1em 'Consolas','Andale Mono',monospace;
+    padding:0 0.25em;
+}
+
+/* 
+    07 - Image Module 
+*/
+img { 
+    border:0; 
+    vertical-align:top;
+}
+a img { 
+    margin:0 0 0.50em; 
+    border:0; 
+}
+img.photo {
+    margin:0 auto 0.5em;
+}
+
+/* 
+    08 - Reusable Classes (minified, generally does not need to be edited)
+*/
+.right,.alignright{float:right;}
+.alignright{margin-left:20px;}
+.left,.alignleft {float:left;}
+.alignleft{margin-right:20px;}
+.block{display:block; height:100%; width:100%;}
+.text-replace{text-indent:-9999px !important;overflow:hidden;}

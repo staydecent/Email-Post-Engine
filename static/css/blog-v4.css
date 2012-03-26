@@ -1,0 +1,396 @@
+/*
+    style.css
+    reset and define html elements
+    organization based on http://www.w3.org/TR/xhtml11/doctype.html#s_doctype
+
+    01 - Reset
+    02 - Structure
+    03 - Text
+    04 - Hypertext
+    05 - List
+    06 - Form
+    07 - Image
+    08 - Reusable Classes
+    09 - Print Styles
+*/
+
+/* 
+    01 - Reset 
+*/
+h1,h2,h3,h4,h5,h6,address,blockquote,div,p,pre,code,body,dl,dt,dd,ol,ul,li,fieldset,form,input,legend,textarea { 
+    margin:0; 
+    padding:0; 
+}
+object { 
+    outline:none; 
+}
+article,aside,figure,footer,header,hgroup,nav,section { 
+    display:block;
+}
+@font-face {
+    font-family:'Droid Serif';
+    src:local('☺'), url('../font/DroidSerif-Regular-webfont.ttf') format('truetype'), url('../font/DroidSerif-Regular-webfont.svg#webfontOAAhrq6s') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+@font-face {
+    font-family:'Droid Serif';
+    src:local('☺'), url('../font/DroidSerif-Italic-webfont.ttf') format('truetype'), url('../font/DroidSerif-Italic-webfont.svg#webfontKHo48rSK') format('svg');
+    font-weight:normal;
+    font-style:italic;
+}
+@font-face {
+    font-family:'Droid Serif';
+    src:local('☺'), url('../font/DroidSerif-Bold-webfont.ttf') format('truetype'), url('../font/DroidSerif-Bold-webfont.svg#webfontcY5tFAO2') format('svg');
+    font-weight:800;
+    font-style:normal;
+}
+@font-face {
+    font-family:'PT Sans Narrow';
+    src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url('http://themes.googleusercontent.com/font?kit=Q_pTky3Sc3ubRibGToTAYsLtdzs3iyjn_YuT226ZsLU') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
+
+
+/* 
+    02 - Structure Module
+*/
+html {
+    position:relative;
+    overflow-y:scroll; /* Force scrollbar */
+}
+body {
+    font:62.5% 'Droid Serif', Georgia, serif; /* 10px assuming browser default of 16px */
+    color:#555;
+    background:#fcfbe1 url(http://lh6.ggpht.com/_Z_QjhvaYEE4/TPX6dfvTiMI/AAAAAAAAAn0/nv-dSIxzLnM/s800/noise_bg.jpg);
+}
+.inner {
+    font-size:1.6em; /* 16px */
+    line-height:1.8em; /* 18px */
+    width:980px;
+    margin:0 auto;
+    padding:40px 0 20px;
+}
+header {
+    border-top:1px solid #1a1a1a;
+    background:#494850 url(http://lh3.ggpht.com/_Z_QjhvaYEE4/TPX52xOWrQI/AAAAAAAAAnk/dSrvHHkfjsc/fade.jpg) no-repeat top center;
+}
+header > .inner {
+    padding:60px 0 40px;
+}
+nav > .inner {
+    background:transparent url(http://lh3.ggpht.com/_Z_QjhvaYEE4/TP_n7ye000I/AAAAAAAAAoY/ViXKaqAgrEc/s800/menu-bg.png) no-repeat top center;
+    padding:7px 0 10px 0;
+    margin-top:-20px;
+}
+.project {
+    position:relative;
+    margin-bottom:80px;
+}
+.project .visit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:300px;
+}
+footer > .inner {
+    border-top:1px solid #EAE1C0;
+    font-size:1.2em;
+    line-height:1.6em;
+    color:#555;
+}
+body.home .box > .centre {
+    padding-top:60px;
+}
+body.home #about > .inner {
+    border-top:1px solid #EAE1C0;
+    border-bottom:1px solid #EAE1C0;
+}
+.post {
+    position:relative;
+    margin-bottom:20px;
+}
+.widget > p {
+    font-size:0.9em;
+    line-height:1.6em;
+}
+.meta {
+    position:absolute;
+    top:0;
+    right:1px;
+    font-size:0.8em;
+    color:#555;
+}
+
+
+/* 
+    03 - Text Module (Consolidated with Presentation & Edit Modules)
+*/
+h1 {
+    overflow:hidden;
+    text-indent:-9999px;
+    width:606px;
+    height:128px;
+    margin:0 auto;
+    background:transparent url(http://lh3.ggpht.com/_Z_QjhvaYEE4/TPX53L5RihI/AAAAAAAAAns/p_Vzy_gyxqA/s800/wordmark.png) no-repeat top left;
+}
+p#description {
+    color:#fcfbe1;
+    text-align:center;
+}
+h2 {
+    font:400 1.2em 'Droid Serif', Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom:20px;
+    border-bottom:1px solid #EAE1C0;
+}
+h2.centre {
+    border:0;
+    margin-bottom:40px;
+}
+h3 {
+    font:800 1em 'Droid Serif', Georgia, serif;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom:20px;
+}
+.project h3 {
+    border-top:1px solid #EAE1C0;
+    padding-top:20px;
+}
+address,cite,dfn,em,var { 
+    font-style:italic; 
+}
+blockquote > p { 
+    font:italic normal 400 1.2em 'Droid Serif', Arial, sans-serif;
+    line-height:1.6em;
+    padding:0 0 28px;
+    color:#484c51;
+}
+blockquote > cite {
+    display:block;
+    font-size:0.9em;
+    text-align:right;
+    color:#555;
+}
+p,pre {
+    text-indent:0;
+    padding:0 0 28px 0; 
+    color:#555;
+}
+p.big {
+    font:400 3em 'PT Sans Narrow', Arial, sans-serif;
+    padding:0 0 40px;
+    color:#494850;
+    text-shadow:0px 0px 1px #fcfbe1;
+}
+.bigstar {
+    color:#da5e5e;
+    text-shadow:1px 1px 0px #b84e4e,2px 2px 0px #b84e4e,3px 3px 0px #b84e4e;
+}
+
+/* 
+    04 - Hypertext Module 
+*/
+a { 
+    color:#b84e4e;
+    text-decoration:underline;
+}
+a:visited { 
+    color:#b84e4e;
+    text-decoration:none !important;
+}
+a.active {
+    color:#fcfbe1;
+}
+a:hover, a:active { 
+    color:#da5e5e;
+    outline:none;
+    text-decoration:none;
+}
+h2 > a {
+    display:block;
+    width:60%;
+    text-decoration:none;
+}
+nav ul > li > a {
+    text-decoration:none;
+}
+a.button, button {
+    box-shadow:2px 2px 0px #52b342;-webkit-box-shadow:2px 2px 0px #52b342;-moz-box-shadow:2px 2px 0px #52b342;
+    background:#70da5e;
+    border:0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.246094);
+    border-radius:5px; -moz-border-radius:5px;
+    color:#fffee8;
+    cursor:pointer;
+    display:inline-block;
+    padding:10px 20px;
+    margin-top:20px;
+    position:relative;
+    font-size:2em;
+    text-decoration:none;
+    text-shadow:rgba(0, 0, 0, 0.1) 0px -1px 1px;
+}
+a.button:hover, button:hover {
+    background:#70da5e;
+    box-shadow:0px 0px 0px #70da5e;-webkit-box-shadow:0px 0px 0px #70da5e;-moz-box-shadow:0px 0px 0px #70da5e;
+    top:2px;
+}
+a.button:active, button:active {
+    top:3px;
+}
+a.visit {
+    display:block;
+    padding:20px 0;
+    border-top:1px solid #EAE1C0;
+    border-bottom:1px solid #EAE1C0;
+    text-align:center;
+    text-decoration:none;
+}
+
+
+/* 
+    05 - List Module 
+*/
+ol,ul { 
+    padding:0; 
+}
+ol > li { 
+    list-style:decimal outside none; 
+}
+ul > li { 
+    list-style:none outside none; 
+    margin:0 0 28px 0px;
+}
+ul > li > span.star {
+    margin-left:-18px;
+    color:#b84e4e;
+}
+li.inline {
+    display:inline;
+}
+nav ul, footer ul {
+    text-align:center;
+}
+nav ul > li {
+    list-style:none outside none;
+    display:inline;
+    margin-right:15px;
+    font-size:0.9em;
+}
+nav ul > li:last-child {
+    margin:0;
+}
+li.post {
+    list-style:none outside none;
+}
+.widget > ol {
+    padding-bottom:28px;
+}
+.widget > ol > li {
+    font-size:0.9em;
+    line-height:1.6em;
+    margin-left:20px;
+}
+
+/* 
+    06 - Form Module 
+*/
+form {
+    
+}
+button {
+    font:400 1em 'Droid Serif', Georgia, serif;
+    margin:0;
+}
+input,textarea {
+    border:2px solid #EAE1C0;
+    background:#fefafa;
+    font:400 1em 'Droid Serif',Arial,sans-serif;
+    padding:8px 10px;
+    color:#484c51;
+    width:90%;
+}
+label, input[type=button], input[type=submit], button { 
+    cursor: pointer;
+}
+label {
+    display:block;
+}
+.error {
+    border-color:#B84E4E;
+    color:#DA5E5E;
+}
+#success {
+    display:none;
+}
+
+
+/* 
+    07 - Image Module 
+*/
+img { 
+    border:0; 
+    vertical-align:top;
+}
+.thumb {
+    position:relative;
+    overflow:hidden;
+    padding-bottom:5px;
+}
+.thumb > img {
+    border:2px solid #484c51;
+    box-shadow:5px 5px 0px #EAE1C0;-webkit-box-shadow:5px 5px 0px #EAE1C0;-moz-box-shadow:5px 5px 0px #EAE1C0;
+}
+.thumb > .overlay {
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:-292px;
+    width:292px;
+    height:182px;
+    background:#b84e4e;
+    color:#fcfbe1;
+    text-align:center;
+}
+.thumb > .overlay > a {
+    padding:78px 0;
+    color:#fcfbe1;
+    text-decoration:none !important;
+    height:0 !important;
+}
+.photo {
+    border:1px solid #EAE1C0;
+}
+
+/* 
+    08 - Reusable Classes
+*/
+.column { float:left; margin:0 40px 0 0; }
+.column.last  { margin:0; }
+.column.one   { width:130px; }
+.column.two   { width:300px; }
+.column.three { width:470px; }
+.column.four  { width:640px; }
+.column.five  { width:810px; }
+.full { width:100%; }
+.right { float:right !important; }
+.block { display:block; width:100%; height:100%; }
+.centre { text-align:center; }
+div.inner:after, .clearfix:after {clear: both;content: ' ';display: block;font-size: 0;line-height: 0;visibility: hidden;width: 0;height:0;}div.inner, .clearfix {display: inline-block;}* html div.inner, * html .clearfix {height: 1%;}div.inner, .clearfix {display: block;}
+
+/*
+    09 - Print Styles (www.phpied.com/delay-loading-your-print-css/)
+*/
+@media print {
+* { background:transparent !important; color:#1a1a1a !important; text-shadow:none; }
+  a, a:visited { color:#1a1a1a !important; text-decoration:underline; }
+  a:after { content: " (" attr(href) ")"; }
+  abbr:after { content: " (" attr(title) ")"; }&nbsp;&nbsp;&nbsp;&nbsp;.ir a:after { content: ""; } &nbsp;/* Don't show links for images */&nbsp;&nbsp;&nbsp;&nbsp;pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }&nbsp;&nbsp;&nbsp;&nbsp;img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

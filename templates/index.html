@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="col1">
+            <span class="meta">Published {{ post.published|timesince }} ago</span><br>
+            <a class="grey" href="/entry/{{ post.slug }}"><small>#</small>Permalink</a>
+        </div>
+
+        <article id="{{ post.title|slugify }}" class="post spacing">
+            <div class="text col3">
+                <h2 class="post-title">{{ post.title }}</h2>
+                {{ post.body }}
+            </div>
+
+            <div style="clear:both"></div>
+        </article>
+{% endblock %}

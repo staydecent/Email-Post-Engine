@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>New Entry</title>
+    
+    <style type="text/css" media="screen">
+    body,html { font: 400 62.5% 'helvetica neue',helvetica,arial,sans-serif; color:#111; background:#fafafa; }
+    form label { display: block; }
+    form input, form textarea, form select { padding: 7px; border: 1px solid #aaa; margin-bottom:5px; }
+    form textarea { width: 80%; font-size:1.2em;line-height:1.4em; }
+    input:focus, textarea:focus, form input:focus, form textarea:focus { outline: 0; border: 1px solid #777; background: #fff; }
+    </style>
+</head>
+<body style="font-size:1.4em;line-height:1.6em;">
+
+<h2>Add New Entry</h2>
+    
+<form action="/admin/new" method="post">
+
+    <div style="float:left;width:25%;">
+     
+    <label for="title">Title</label>
+    <input class="title" name="title" type="text" placeholder="Title" />
+    
+    <label for="slug">Slug</label>
+    <input name="slug" type="text" placeholder="Slug" />
+    
+    <label for="template">Template</label>
+    <input name="template" type="text" placeholder="Template name" value="None" />
+
+    <label for="category">Category</label>
+    <select id="catList" name="category">
+    {% for item in cats %}
+        <option value="{{ item }}" {% if forloop.first %}selected="selected"{% endif %}>
+            {{ item }}
+        </option>
+    {% endfor %}
+    </select>
+    
+    </div>
+        
+    <!-- <p>
+    <input name="tags" type="text" placeholder="Tags" style="width:94%" />
+    </p> -->
+    
+    <div style="float:left;width:65%;">
+    
+    <label for="body">Body</label>
+    <textarea name="body" rows="20" placeholder="Body"></textarea><br>
+    <input name="submit" type="submit" value="Submit" />
+    
+    </div>
+    
+    	
+</form>
+        
+        
+</body>
+</html>

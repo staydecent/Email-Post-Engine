@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Projects by Staydecent</title>
+	<link rel="alternate" href="http://staydecent.ca/" title="Staydecent, design and development" type="text/html"/>
+  	<link rel="self" href="http://staydecent.ca/feed" title="Staydecent, design and development" type="application/atom+xml"/>
+	<updated>2003-12-13T18:30:02Z</updated>
+	<author><name>Adrian Unger</name></author>
+	<id>http://staydecent.ca/</id>
+	
+	<entry>
+		<id>http://staydecent.ca/entry/{{ e.slug }}</id>
+		<title>{{ e.title }}</title>
+		<link href="http://bret.appspot.com/entry/web-sockets-in-tornado" rel="alternate" type="text/html"/>
+		<updated>{{ e.published }}</updated>
+		<summary>{{ e.sentence|striptags }}</summary>
+	</entry>
+
+</feed>

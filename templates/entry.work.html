@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="inner">
+    <div id="entry-{{ e.id }}" class="entry">
+
+        <div class="col8">
+            {% for i in e.images %}
+            <img class="photo" src="https://s3.amazonaws.com/staydecent_images/{{ i }}" alt="Image for {{ e.title }}">
+            {% endfor %}
+        </div>
+
+        <div class="col4 last">
+            <h2>{{ e.title }} <span class="meta year">&middot; {{ e.published|date:"Y" }}</span></h2>
+            <div class="postContent">
+            <p class="big">{{ e.excerpt }}</p>
+
+            {% autoescape off %}
+            {{ e.body }}
+            {% endautoescape %}
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="postNav">
+        {% if next %}
+            <a href="/{{ next.permalink }}">{{ next.title }} &raquo;</a>
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

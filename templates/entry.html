@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="inner">
+    <div id="entry-{{ e.id }}" class="entry">
+        <h1>{{ e.title }}</h1>
+
+        <p class="big">{{ e.excerpt }}</p>
+        
+        <div class="postContent col8">
+            {% autoescape off %}
+            {{ e.body }}
+            {% endautoescape %}
+        </div>
+
+        <span class="published meta">&mdash; Published {{ e.published|timesince }} ago</span>
+
+        {% if next %}
+            <div class="postNav skip2 col3 last"><a href="/{{ next.permalink }}">{{ next.title }} &raquo;</a></div>
+        {% endif %}
+
+        <hr>
+    </div>
+</div>
+{% endblock %}

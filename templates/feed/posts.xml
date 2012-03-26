@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+	<title>the Staydecent Blog</title>
+	<subtitle>Articles by Adrian Unger</subtitle>
+	<link rel="self" href="http://blog.staydecent.ca/feed" title="the Staydecent Blog feed" type="application/atom+xml"/>
+	<link rel="alternate" href="http://blog.staydecent.ca/" title="the Staydecent Blog" type="text/html"/>
+	<id>http://staydecent.ca/</id>
+	<updated>{{ atom_now }}</updated>
+	<author>
+		<name>Adrian Unger</name>
+		<email>hello@staydecent.ca</email>
+	</author>
+ 	{% for e in entries %}
+	<entry>
+		<title>{{ e.title }}</title>
+		<link href="http://blog.staydecent.ca/entry/{{ e.slug }}" />
+		<link href="http://blog.staydecent.ca/entry/{{ e.slug }}" rel="alternate" type="text/html"/>
+		<link rel="edit" href="http://blog.staydecent.ca/admin/edit/{{ e.slug }}"/>
+		<id>http://blog.staydecent.ca/entry/{{ e.slug }}</id>
+		<updated>{{ e.atom_updated }}</updated>
+		<published>{{ e.atom_published }}</published>
+		<summary>{{ e.body|striptags|truncatewords:20 }}</summary>
+		<content type="html"><![CDATA[{{ e.body }}]]></content>
+	</entry>
+	{% endfor %}
+</feed>

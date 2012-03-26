@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="inner">
+    <div class="col3"><h2>Results for &ldquo;{{ phrase }}&rdquo;</h2></div>
+
+    <div class="col7">
+        {% for e in results %}
+        <!-- {{ e.title|length }} -->
+        {% if e.title|length != 0 %}
+        <div id="entry-{{ e.id }}" class="entry col6{% if forloop.counter|divisibleby:2 %} last{% endif %}">
+            <h3 class="title"><a href="{{ e.permalink }}" title="Permalink for {{ e.title }}" rel="bookmark">{{ e.title }}</a></h3>
+
+            <p>{{ e.excerpt }}&nbsp;</p>
+        </div>
+        {% endif %}
+        {% empty %}
+            <p>Sorry, no results were returned!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

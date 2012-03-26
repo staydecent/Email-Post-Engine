@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block intro %}
+<div id="intro" class="container"><div class="inner">
+
+    <div style="background:#4a4a4a;">
+        <hr class="less spacing">
+        <p class="big ger" style="color:white;padding:0 24px;">The freelance web design &amp; development studio of Adrian Unger. </p>
+        <p><a class="white" href="/work">View my work &rarr;</a></p>
+    </div>
+
+</div></div>
+{% endblock %}
+
+{% block content %}
+<div class="latest work" style="background:#111;"><div class="inner">
+    {% for e in work %}
+    {% if forloop.first %}
+    <div id="entry-{{ e.id }}" class="entry">
+        <div class="col8">
+            <div class="large">
+            <a href="{{ e.permalink }}" title="Permalink for {{ e.title }}" rel="bookmark">
+                {% for i in e.images %}
+                <img src="https://s3.amazonaws.com/staydecent_images/{{ i }}" alt="Thumbnail for {{ e.title }}">
+                {% endfor %}
+            </a>
+            </div>
+        </div>
+        <div class="card col4 last">
+            <h2>{{ e.title }}</h2>
+            <p>{{ e.excerpt }}</p>
+
+            <a href="{{ e.permalink }}">See more</a>
+        </div>
+    </div>
+
+    <hr class="spacing">
+
+    {% else %}
+    <div id="entry-{{ e.id }}" class="entry col3{% if forloop.counter0|divisibleby:4 %} last{% endif %}">
+        <div class="thumbnail">
+        <a href="{{ e.permalink }}" title="Permalink for {{ e.title }}" rel="bookmark">
+            <img src="https://s3.amazonaws.com/staydecent_images/{{ e.thumbnail }}" alt="Thumbnail for {{ e.title }}">
+        </a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div></div>
+
+<hr class="spacing">
+
+<p class="centre"><a class="button" href="/work">View all work &rarr;</a></p>
+
+<hr class="line">
+<div class="inner">
+
+    <div class="latest articles">
+        <div class="col3"><h2 class="section">Latest Articles <small><a class="button" href="/articles">View all &rarr;</a></small></h2></div>
+
+        {% for e in articles %}
+        <div id="entry-{{ e.id }}" class="entry col3{% if forloop.counter == 3 %} last{% endif %}">
+            <h3 class="title"><a href="{{ e.permalink }}" title="Permalink for {{ e.title }}" rel="bookmark">{{ e.title }}</a></h3>
+            <p class="excerpt">{{ e.excerpt }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr class="spacing">
+
+    <div class="latest bits">
+        <div class="col3"><h2 class="section">Other Bits <small><a class="button" href="/bits">View all &rarr;</a></small></h2></div>
+
+        {% for e in bits %}
+            {% if forloop.counter == 1 or forloop.counter == 4 or forloop.counter == 7 %}
+            <ol class="col3{% if forloop.counter == 7 %} last{% endif %}">
+            {% endif %}
+            <li id="entry-{{ e.id }}" class="nostyle"><small>
+                <a href="{{ e.permalink }}" title="Permalink for {{ e.title }}" rel="bookmark">{{ e.title }}</a>
+            </small></li>
+            {% if forloop.counter == 3 or forloop.counter == 6 or forloop.counter == 9 %}
+            </ol>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <hr class="spacing">
+
+</div>
+{% endblock %}

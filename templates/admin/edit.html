@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>Edit Entry</title>
+    
+    <style type="text/css" media="screen">
+    body,html { font: 400 62.5% 'helvetica neue',helvetica,arial,sans-serif; color:#111; background:#fafafa; }
+    form label { display: block; }
+    form input, form textarea, form select { padding: 7px; border: 1px solid #aaa; margin-bottom:5px; }
+    form textarea { width: 80%; font-size:1.2em;line-height:1.4em; }
+    input:focus, textarea:focus, form input:focus, form textarea:focus { outline: 0; border: 1px solid #777; background: #fff; }
+    </style>
+</head>
+<body style="font-size:1.4em;line-height:1.6em;">
+
+<h1>Edit Entry</h1>
+    
+<form action="/admin/edit/{{ entry.slug }}" method="post">
+
+    <div style="float:left;width:25%;">
+
+    <label for="title">Title</label>
+    <input class="title" name="title" type="text" placeholder="Title" value="{{ entry.title }}" />
+
+    <label for="slug">Slug</label>
+    <input name="slug" type="text" placeholder="Slug" value="{{ entry.slug }}" />
+    
+    <label for="draft">Draft</label>
+    <select name="draft">
+    	<option value="True" {% if entry.draft %}selected="selected"{% endif %}>
+            True
+        </option>
+        <option value="" {% if not entry.draft %}selected="selected"{% endif %}>
+            False
+        </option>
+    </select>
+    
+    </div>
+    
+    <div style="float:left;width:65%;">
+
+    <label for="excerpt">Excerpt</label>
+    <textarea name="excerpt" rows="20">{{ entry.excerpt }}</textarea><br>    
+
+    <label for="body">Body</label>
+    <textarea name="body" rows="20">{{ entry.body }}</textarea><br>
+            
+    <input name="key" type="hidden" value="{{ entry.key }}" />
+    <input name="submit" type="submit" value="Submit" />
+
+<!--     <label for="template">Published</label>
+    <input name="published" type="text" placeholder="Published" value="{{ entry.published }}" /> -->
+    
+    </div>
+
+</form>
+
+</body>
+</html>
